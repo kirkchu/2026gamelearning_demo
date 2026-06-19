@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>拔河算術對戰</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell" aria-label="拔河算術對戰">
+      <section class="team-panel blue-panel" aria-labelledby="blue-title">
+        <div class="team-header">
+          <p class="team-label">BLUE TEAM</p>
+          <h1 id="blue-title">藍隊</h1>
+          <strong id="blue-score" class="score">0</strong>
+        </div>
+
+        <div class="problem-card">
+          <p id="blue-problem" class="problem">準備中...</p>
+          <div id="blue-answer" class="answer-display" aria-live="polite">0</div>
+          <p id="blue-message" class="message" aria-live="polite"></p>
+        </div>
+
+        <div class="keypad" aria-label="藍隊數字鍵盤">
+          <button data-team="blue" data-key="7">7</button>
+          <button data-team="blue" data-key="8">8</button>
+          <button data-team="blue" data-key="9">9</button>
+          <button data-team="blue" data-key="4">4</button>
+          <button data-team="blue" data-key="5">5</button>
+          <button data-team="blue" data-key="6">6</button>
+          <button data-team="blue" data-key="1">1</button>
+          <button data-team="blue" data-key="2">2</button>
+          <button data-team="blue" data-key="3">3</button>
+          <button data-team="blue" data-key="clear" class="utility">清除</button>
+          <button data-team="blue" data-key="0">0</button>
+          <button data-team="blue" data-key="submit" class="submit">送出</button>
+        </div>
+      </section>
+
+      <section class="arena" aria-labelledby="arena-title">
+        <div class="match-board">
+          <p class="round-label">TUG OF MATH</p>
+          <h2 id="arena-title">拔河比賽</h2>
+          <div class="score-diff">
+            <span id="leader-text">雙方平手</span>
+            <strong id="diff-text">差距 0 分</strong>
+          </div>
+        </div>
+
+        <div class="tug-stage" aria-live="polite">
+          <div class="center-flag" aria-hidden="true">🚩</div>
+          <div id="rope" class="rope"></div>
+          <div id="blue-pullers" class="pullers blue-pullers" aria-label="藍隊拔河選手">👱‍♀️🧑‍🦰</div>
+          <div id="red-pullers" class="pullers red-pullers" aria-label="紅隊拔河選手">👱‍♂️🧑‍🦱</div>
+        </div>
+
+        <div class="finish-line">
+          <span>藍隊勝利線</span>
+          <span>差距 20 分獲勝</span>
+          <span>紅隊勝利線</span>
+        </div>
+
+        <button id="reset-game" class="reset-button" type="button">重新開始</button>
+      </section>
+
+      <section class="team-panel red-panel" aria-labelledby="red-title">
+        <div class="team-header">
+          <p class="team-label">RED TEAM</p>
+          <h1 id="red-title">紅隊</h1>
+          <strong id="red-score" class="score">0</strong>
+        </div>
+
+        <div class="problem-card">
+          <p id="red-problem" class="problem">準備中...</p>
+          <div id="red-answer" class="answer-display" aria-live="polite">0</div>
+          <p id="red-message" class="message" aria-live="polite"></p>
+        </div>
+
+        <div class="keypad" aria-label="紅隊數字鍵盤">
+          <button data-team="red" data-key="7">7</button>
+          <button data-team="red" data-key="8">8</button>
+          <button data-team="red" data-key="9">9</button>
+          <button data-team="red" data-key="4">4</button>
+          <button data-team="red" data-key="5">5</button>
+          <button data-team="red" data-key="6">6</button>
+          <button data-team="red" data-key="1">1</button>
+          <button data-team="red" data-key="2">2</button>
+          <button data-team="red" data-key="3">3</button>
+          <button data-team="red" data-key="clear" class="utility">清除</button>
+          <button data-team="red" data-key="0">0</button>
+          <button data-team="red" data-key="submit" class="submit">送出</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="winner-overlay" class="winner-overlay" role="status" aria-live="assertive" hidden>
+      <div>
+        <p>比賽結束</p>
+        <strong id="winner-text">藍隊獲勝！</strong>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
